@@ -61,15 +61,15 @@ trigger:
 entity_id:
   description: The entity to watch.
   required: true
-  type: string | list
+  type: string
 above:
   description: Optional lower threshold. You can use a number or an entity ID.
   required: false
-  type: number | string
+  type: string
 below:
   description: Optional upper threshold. You can use a number or an entity ID.
   required: false
-  type: number | string
+  type: string
 attribute:
   description: Optional attribute to evaluate instead of the main state.
   required: false

@@ -61,23 +61,23 @@ trigger:
 entity_id:
   description: The entity to watch.
   required: true
-  type: string | list
+  type: string
 from:
   description: Optional starting state to match.
   required: false
-  type: string | list
+  type: string
 to:
   description: Optional new state to match.
   required: false
-  type: string | list
+  type: string
 not_from:
   description: Optional starting state to exclude. YAML only.
   required: false
-  type: string | list
+  type: string
 not_to:
   description: Optional new state to exclude. YAML only.
   required: false
-  type: string | list
+  type: string
 attribute:
   description: Optional attribute to watch instead of the main state.
   required: false

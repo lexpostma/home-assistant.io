@@ -59,7 +59,7 @@ trigger:
 event_type:
   description: The event type to listen for. You can use one event type or a list of event types.
   required: true
-  type: string | list
+  type: string
 event_data:
   description: Optional event data that must match.
   required: false

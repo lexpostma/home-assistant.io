@@ -54,11 +54,11 @@ trigger:
 at:
   description: The time to trigger at. You can use a time string, an `input_datetime` entity, a timestamp or uptime sensor, a mapping with `entity_id` and `offset`, a limited template, or a list.
   required: true
-  type: string | map | list
+  type: string
 weekday:
   description: Optional weekday filter, using `mon`, `tue`, `wed`, `thu`, `fri`, `sat`, or `sun`.
   required: false
-  type: string | list
+  type: string
 {% endoptions_yaml %}
 
 ## Good to know

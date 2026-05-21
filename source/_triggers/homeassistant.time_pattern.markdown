@@ -55,15 +55,15 @@ trigger:
 hours:
   description: Optional hour pattern.
   required: false
-  type: string | integer
+  type: string
 minutes:
   description: Optional minute pattern.
   required: false
-  type: string | integer
+  type: string
 seconds:
   description: Optional second pattern.
   required: false
-  type: string | integer
+  type: string
 {% endoptions_yaml %}
 
 ## Good to know
