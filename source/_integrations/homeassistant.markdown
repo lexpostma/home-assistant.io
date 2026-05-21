@@ -1,6 +1,6 @@
 ---
 title: Home Assistant Core Integration
-description: Description of the homeassistant integration.
+description: Set up core Home Assistant settings, automation triggers, and generic actions.
 ha_release: 0.0
 ha_category:
   - Other
@@ -305,6 +305,61 @@ homeassistant:
       username: "username"
       credential: "abc123"
 ```
+
+{% include integrations/triggers.md %}
+
+## Home Assistant Core automation examples
+
+You can use these triggers to react when Home Assistant starts or shuts down.
+
+{% include docs/paste_yaml_tip.md %}
+
+### Automation: send a notification when Home Assistant starts
+
+If you restart Home Assistant for an update or maintenance, this automation lets you know when it is ready again. It sends a message to your phone as soon as startup finishes.
+
+- **Trigger**: Start
+- **Action**: Send a notification message
+  - **Target**: My Device (`notify.my_device`)
+
+{% details "YAML example for notifying when Home Assistant starts" %}
+
+{% example %}
+automation: |
+  alias: "Notify when Home Assistant starts"
+  triggers:
+    - trigger: homeassistant
+      event: start
+  actions:
+    - action: notify.send_message
+      target:
+        entity_id: notify.my_device
+      data:
+        message: "Home Assistant has started."
+{% endexample %}
+
+{% enddetails %}
+
+### Automation: save persistent states before Home Assistant shuts down
+
+If you are about to restart or stop Home Assistant, this automation tells Home Assistant to save persistent states right away. This can be useful before planned maintenance.
+
+- **Trigger**: Shutdown
+- **Action**: Save persistent states
+
+{% details "YAML example for saving persistent states before shutdown" %}
+
+{% example %}
+automation: |
+  alias: "Save persistent states before shutdown"
+  triggers:
+    - trigger: homeassistant
+      event: shutdown
+  actions:
+    - action: homeassistant.save_persistent_states
+{% endexample %}
+
+{% enddetails %}
 
 ## Actions
 
